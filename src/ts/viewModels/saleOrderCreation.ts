@@ -51,7 +51,7 @@ class SaleOrderCreationViewModel {
               })
               resolve({ success: true, error: '' });
           } else {
-              resolve({ success: false, error: 'Je sais pas frere' });
+              resolve({ success: false, error: 'Erreur' });
           }
       }, 1000);
   });

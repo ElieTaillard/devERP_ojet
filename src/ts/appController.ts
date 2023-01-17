@@ -64,6 +64,8 @@ class RootViewModel {
       { path: "dashboard", detail: { label: "Dashboard", iconClass: "oj-ux-ico-bar-chart" } },
       { path: "incidents", detail: { label: "Incidents", iconClass: "oj-ux-ico-fire" } },
       { path: "customers", detail: { label: "Customers", iconClass: "oj-ux-ico-contact-group" } },
+      { path: "saleOrderDetail", detail: { label: "Sale Order Detail", iconClass: "oj-ux-ico-contact-group" } },
+      { path: "saleOrderCreation", detail: { label: "Sale Order Creation", iconClass: "oj-ux-ico-contact-group" } },
       { path: "about", detail: { label: "About", iconClass: "oj-ux-ico-information-s" } }
     ];
     // router setup
@@ -108,7 +110,7 @@ class RootViewModel {
   }
 
   logout = (): void => {
-    fetch('https://jde925.inetum.group:20221/jderest/v2/tokenrequest/logout', {
+    fetch('https://jde925.inetum.group:20221/jderest/v3/orchestrator/jde-logout', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json;charset=UTF-8',

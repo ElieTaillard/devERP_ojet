@@ -1,0 +1,21 @@
+<!--
+ Copyright (c) 2014, 2022, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Sale Order Creation</h1>
+  <div>
+    <oj-form-layout>
+      <oj-input-number id="Quantity" value="{{quantity}}" label-hint="Quantity">
+          
+      </oj-input-number>
+      <oj-input-text id="Product" value="{{product}}" label-hint="ID Product">
+
+      </oj-input-text>
+      <oj-button class="oj-button-lg" on-oj-action="[[ValideForm]]">
+          <span>Valider</span>
+      </oj-button>
+  </oj-form-layout>
+  </div>
+</div>

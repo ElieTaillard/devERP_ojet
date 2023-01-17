@@ -38,7 +38,7 @@ class LoginViewModel {
         
 
         // #### API MODE ####  
-        const responseAPi = await window.fetch('https://jde925.inetum.group:20221/jderest/v2/tokenrequest', {
+        const responseAPi = await window.fetch('https://jde925.inetum.group:20221/jderest/v3/orchestrator/jde-login', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json;charset=UTF-8',

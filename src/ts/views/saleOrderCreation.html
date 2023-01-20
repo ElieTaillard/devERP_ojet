@@ -6,20 +6,8 @@
 <div class="oj-hybrid-padding">
   <h1>Sale Order Creation</h1>
   <div>
-    <oj-form-layout>
-      <oj-input-number id="Quantity_Ordered" value="{{Quantity_Ordered}}" label-hint="Quantity">
-
-      </oj-input-number>
-      <oj-input-text id="Item_Number" value="{{Item_Number}}" label-hint="ID Product">
-
-      </oj-input-text>
-      <oj-button class="oj-button-lg" on-oj-action="[[ValideForm]]">
-        <span>Ajouter</span>
-      </oj-button>
-    </oj-form-layout>
-
-    <oj-table id="table" data="[[dataprovider]]" edit-mode="rowEdit"
-      layout="fixed" columns='[
+    <oj-table id="table" data="[[dataprovider]]" style="width: 67%;" edit-mode="rowEdit"
+         columns='[
                 {"field": "Quantity_Ordered",
                 "headerText": "Quantity", 
                 "showRequired": true,
@@ -30,6 +18,19 @@
                 "id": "Item_Number"}
               ]'>
     </oj-table>
+    <oj-form-layout 
+      max-columns="3"
+      direction="column"> 
+      <oj-input-number id="Quantity_Ordered" value="{{Quantity_Ordered}}" label-hint="Quantity">
+
+      </oj-input-number>
+      <oj-input-text id="Item_Number" value="{{Item_Number}}" label-hint="ID Product">
+
+      </oj-input-text>
+      <oj-button class="oj-button-lg" on-oj-action="[[ValideForm]]">
+        <span>+</span>
+      </oj-button>
+    </oj-form-layout>
 
     <oj-form-layout>
       <oj-button class="oj-button-lg" on-oj-action="[[SendForm]]">

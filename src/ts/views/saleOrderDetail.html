@@ -6,6 +6,43 @@
 <div class="oj-hybrid-padding">
   <h1>Sale Order Detail</h1>
   <div>
-    
+    <oj-form-layout 
+      max-columns="2"
+      direction="column">
+      <oj-input-text id="username"
+      value="{{idSaleOrder}}" label-hint="idSaleOrder"></oj-input-text>
+      <oj-button class="oj-button-lg" on-oj-action="[[showDetail]]">
+          <span>Rechercher</span>
+      </oj-button>
+    </oj-form-layout>
+
+    <oj-table
+            id="table"
+            data="[[dataprovider]]"
+            columns='[{"headerText": "LineNumber", 
+                      "field": "LineNumber",
+                      "id": "LineNumber"},
+                      {"headerText": "BusinessUnit", 
+                       "field": "BusinessUnit",
+                       "id": "BusinessUnit"},
+                      {"headerText": "BusinessUnitBIs", 
+                       "field": "BusinessUnitBIs",
+                       "id": "BusinessUnitBIs"},
+                      {"headerText": "OrderDate", 
+                       "field": "OrderDate",
+                       "id": "OrderDate"},
+                      {"headerText": "AddressNumber", 
+                       "field": "AddressNumber",
+                       "id": "AddressNumber"},
+                      {"headerText": "AddressNumberBis", 
+                       "field": "AddressNumberBis",
+                       "id": "AddressNumberBis"},
+                       {"headerText": "QuantityBackordered", 
+                       "field": "QuantityBackordered",
+                       "id": "QuantityBackordered"},
+                       {"headerText": "UnitPrice", 
+                       "field": "UnitPrice",
+                       "id": "UnitPrice"}
+                       ]'></oj-table>
   </div>
 </div>

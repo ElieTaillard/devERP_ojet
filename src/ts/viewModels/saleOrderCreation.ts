@@ -47,7 +47,7 @@ class SaleOrderCreationViewModel {
       setTimeout(() => {
           if (responseAPi.ok) {
               responseAPi.json().then((data) => {
-                  
+                sessionStorage.setItem("idSaleOrder", data.PreviousOrder);
               })
               resolve({ success: true, error: '' });
           } else {

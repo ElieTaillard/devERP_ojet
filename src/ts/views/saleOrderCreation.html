@@ -7,15 +7,35 @@
   <h1>Sale Order Creation</h1>
   <div>
     <oj-form-layout>
-      <oj-input-number id="Quantity" value="{{quantity}}" label-hint="Quantity">
-          
+      <oj-input-number id="Quantity_Ordered" value="{{Quantity_Ordered}}" label-hint="Quantity">
+
       </oj-input-number>
-      <oj-input-text id="Product" value="{{product}}" label-hint="ID Product">
+      <oj-input-text id="Item_Number" value="{{Item_Number}}" label-hint="ID Product">
 
       </oj-input-text>
       <oj-button class="oj-button-lg" on-oj-action="[[ValideForm]]">
-          <span>Valider</span>
+        <span>Ajouter</span>
       </oj-button>
-  </oj-form-layout>
+    </oj-form-layout>
+
+    <oj-table id="table" data="[[dataprovider]]" edit-mode="rowEdit"
+      layout="fixed" columns='[
+                {"field": "Quantity_Ordered",
+                "headerText": "Quantity", 
+                "showRequired": true,
+                "id": "Quantity_Ordered"},
+                {"field": "Item_Number",
+                "headerText": "IdProduct",
+                "showRequired": true,
+                "id": "Item_Number"}
+              ]'>
+    </oj-table>
+
+    <oj-form-layout>
+      <oj-button class="oj-button-lg" on-oj-action="[[SendForm]]">
+        <span>Envoyer</span>
+      </oj-button>
+    </oj-form-layout>
+
   </div>
 </div>

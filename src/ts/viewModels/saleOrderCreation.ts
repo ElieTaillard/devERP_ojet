@@ -6,18 +6,31 @@ import "ojs/ojlabel";
 import "ojs/ojbutton";
 import "ojs/ojformlayout";
 import "ojs/ojinputnumber";
+import "ojs/ojtable";
+import ArrayDataProvider = require("ojs/ojarraydataprovider");
+
 
 class SaleOrderCreationViewModel {
-  public quantity: ko.Observable<number>;
-  public product: ko.Observable<string>;
+  public Quantity_Ordered: ko.Observable<number>;
+  public Item_Number: ko.Observable<string>;
+
+  saleOrderDetail: ko.ObservableArray<any> = ko.observableArray();
+
+  readonly dataprovider = new ArrayDataProvider(this.saleOrderDetail, {
+    keyAttributes: "LineNumber"
+  });
   
   constructor() {
     RootViewModel.afficheHeader(true);
-    this.quantity = ko.observable(0);
-    this.product = ko.observable('');
+    this.Quantity_Ordered = ko.observable(0);
+    this.Item_Number = ko.observable('');
   }
   public ValideForm = (): void => {
-      const promise = this.callApi(this.quantity(), this.product())
+    this.saleOrderDetail.push({Quantity_Ordered: this.Quantity_Ordered(), Item_Number: this.Item_Number()})
+  }
+
+  public SendForm = (): void => {
+      const promise = this.callApi()
       promise.then((response) => {
         if (response.success) {
             RootViewModel.router.go({path:'saleOrderDetail'});
@@ -25,7 +38,9 @@ class SaleOrderCreationViewModel {
         }
     });
   }
-  callApi = async (quantity: number, product: string): Promise<{ success: boolean, error: string }> => {
+
+
+  callApi = async (): Promise<{ success: boolean, error: string }> => {
       const responseAPi = await window.fetch('https://jde925.inetum.group:20221/jderest/v3/orchestrator/LAB04_TestOrchestration', {
         method: 'POST',
         headers: {
@@ -35,12 +50,7 @@ class SaleOrderCreationViewModel {
             token: sessionStorage.getItem('APIToken'),
             deviceName: "Oracle Jet",
             Long_Address_Number: 1001,
-            GridIn_1_3: [
-              {
-                Quantity_Ordered: quantity,
-                Item_Number: product
-              }
-            ]
+            GridIn_1_3: this.saleOrderDetail()
         }),
     })
     return new Promise((resolve) => {

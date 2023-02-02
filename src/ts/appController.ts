@@ -64,6 +64,7 @@ class RootViewModel {
       { path: "dashboard", detail: { label: "Dashboard", iconClass: "oj-ux-ico-bar-chart" } },
       { path: "incidents", detail: { label: "Incidents", iconClass: "oj-ux-ico-fire" } },
       { path: "customers", detail: { label: "Customers", iconClass: "oj-ux-ico-contact-group" } },
+      { path: "poReceipt", detail: { label: "PO Receipt", iconClass: "oj-ux-ico-contact-group" } },
       { path: "saleOrderDetail", detail: { label: "Sale Order Detail", iconClass: "oj-ux-ico-contact-group" } },
       { path: "saleOrderCreation", detail: { label: "Sale Order Creation", iconClass: "oj-ux-ico-contact-group" } },
       { path: "about", detail: { label: "About", iconClass: "oj-ux-ico-information-s" } }

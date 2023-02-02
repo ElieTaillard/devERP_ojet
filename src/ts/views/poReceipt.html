@@ -1,0 +1,68 @@
+<!--
+ Copyright (c) 2014, 2022, Oracle and/or its affiliates.
+ Licensed under The Universal Permissive License (UPL), Version 1.0
+ as shown at https://oss.oracle.com/licenses/upl/
+ -->
+<div>
+  <div>
+    <oj-form-layout
+    label-edge="inside"
+    columns="3"
+    max-columns="3"
+    direction="row"
+    colspan-wrap="nowrap"
+    user-assistance-density="compact">
+      <oj-label-value colspan="2" style="margin: 0;">
+        <h4 style="margin: 0;" slot="value">Titre PO02</h4>
+      </oj-label-value>
+      <oj-label-value colspan="1" style="float: right;">
+        <oj-button on-oj-action="[[SearchReceipt]]" slot="value" display="icons">
+          <span slot="startIcon" class="oj-ux-ico-search"></span>
+        </oj-button>
+      </oj-label-value>
+      <oj-label-value colspan="1">
+        <oj-input-text label-hint="MMCU" value="{{MMCU}}" slot="value"></oj-input-text>
+      </oj-label-value>
+      <oj-label-value colspan="2">
+        <oj-input-text disabled="true" label-hint="Fournisseur" value="" slot="value"></oj-input-text>
+      </oj-label-value>
+      <oj-input-text label-hint="DCTO" value="{{DCTO}}"></oj-input-text>
+      <oj-input-text label-hint="DOCO" value="{{DOCO}}"></oj-input-text>
+      <oj-input-text label-hint="LNID" value="{{LNID1}}"></oj-input-text>
+    </oj-form-layout>
+    <hr>
+    <oj-form-layout
+    label-edge="inside"
+    columns="3"
+    max-columns="3"
+    direction="row"
+    colspan-wrap="nowrap"
+    user-assistance-density="compact">
+      <oj-input-text disabled="true" value="{{LNID2}}" label-hint="LNID"></oj-input-text>
+      <oj-input-text disabled="true" value="{{LITM}}" label-hint="LITM"></oj-input-text>
+      <oj-input-text disabled="true" value="{{PDDJ}}" label-hint="PDDJ"></oj-input-text>
+      <oj-label-value colspan="3">
+        <oj-input-text disabled="true" value="{{DL01}}" label-hint="DL01" slot="value"></oj-input-text>
+      </oj-label-value>
+      <span>Qté à recevoir:</span>
+      <oj-input-text disabled="true" label-hint="UOPN" value="{{UOPN}}"></oj-input-text>
+      <oj-input-text disabled="true" label-hint="UOM" value="{{UOM}}"></oj-input-text>
+      
+    </oj-form-layout>
+    <oj-form-layout
+    label-edge="inside"
+    columns="2"
+    max-columns="2"
+    direction="row"
+    colspan-wrap="nowrap"
+    user-assistance-density="compact">
+      <oj-input-text label-hint="Emplacement" value="{{Empl}}"></oj-input-text>
+      <oj-input-text label-hint="Lot" value="{{Lot}}"></oj-input-text>
+      <span>Qté reçue:</span>
+      <oj-input-text label-hint="Qté reçue" value="{{QtRecue}}"></oj-input-text>
+      <oj-button class="oj-button-lg" on-oj-action="[[ValidateReceipt]]" disabled="{{ValideButtonDisabled}}">
+          <span>Valider</span>
+      </oj-button>
+    </oj-form-layout>
+  </div>
+</div>
